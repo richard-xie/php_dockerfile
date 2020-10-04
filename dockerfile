@@ -1,5 +1,4 @@
-ADD file:69848cb51056edaf120230b6f218a79968ac797295c2cef6728332e1801357be in / 
-CMD ["/bin/sh"]
+FROM php7.2-fpm-alpine
 ENV PHPIZE_DEPS=autoconf   dpkg-dev dpkg   file   g++   gcc   libc-dev   make   pkgconf   re2c
 RUN apk add --no-cache --virtual .persistent-deps   ca-certificates   curl   tar   xz   openssl
 RUN set -x \
