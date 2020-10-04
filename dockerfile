@@ -84,7 +84,8 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
  && apk add --update --no-cache tzdata vim supervisor \
  && cp -r -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
  && apk del tzdata
-ENV PHPIZE_DEPS=autoconf cmake file g++ gcc libc-dev pcre-dev  perl-dev  zlib-dev  linux-headers gnupg libxslt-dev  libcurl augeas-dev  ca-certificates  musl-dev  icu-dev  libpq libffi-dev make git pkgconf  openssl-dev cyrus-sasl-dev  bzip2-dev  gettext-dev re2c
+ENV PHPIZE_DEPS \
+        autoconf cmake file g++ gcc libc-dev pcre-dev  perl-dev  zlib-dev  linux-headers gnupg libxslt-dev  libcurl augeas-dev  ca-certificates  musl-dev  icu-dev  libpq libffi-dev make git pkgconf  openssl-dev cyrus-sasl-dev  bzip2-dev  gettext-dev re2c
 RUN apk add --no-cache --virtual .persistent-deps icu-dev libmcrypt-dev libssl1.0 libsodium-dev  zeromq-dev postgresql-dev libxml2-dev  libmemcached-dev freetype-dev libjpeg-turbo-dev  libpng-dev
 RUN set -xe \
  && apk add --no-cache --virtual .build-deps $PHPIZE_DEPS \
