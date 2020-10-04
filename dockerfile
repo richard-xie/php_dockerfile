@@ -1,5 +1,5 @@
 #ADD file:69848cb51056edaf120230b6f218a79968ac797295c2cef6728332e1801357be in / 
-FROM php7-nginx-alpine:7.2.34
+FROM php7-alpine:7.2.34
 CMD ["/bin/sh"]
 #RUN apk add dpkg-dev dpkg file g++ gcc libc-dev make pkgconf re2c
 ENV PHPIZE_DEPS \
