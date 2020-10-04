@@ -18,8 +18,16 @@ RUN set -x \
 ENV PHP_INI_DIR=/usr/local/etc/php
 RUN mkdir -p $PHP_INI_DIR/conf.d
 ENV PHP_EXTRA_CONFIGURE_ARGS=--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data
-ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2
-ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2
+ENV PHP_CFLAGS \
+        -fstack-protector-strong \
+        -fpic \
+        -fpie \
+        -O2
+ENV PHP_CPPFLAGS \
+        -fstack-protector-strong \
+        -fpic \
+        -fpie \
+        -O2
 ENV PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie
 ENV GPG_KEYS=A917B1ECDA84AEC2B568FED6F50ABC807BD5DCD0 528995BFEDFBA7191D46839EF9BA0ADA31CBD89E 1729F83938DA44E27BA0F4D3DBDB397470D12172
 ENV PHP_VERSION=7.1.13
